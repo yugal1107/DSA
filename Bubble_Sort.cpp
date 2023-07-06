@@ -35,9 +35,7 @@ int* bubble_sort(int *arr , int n){
 int main(){
     int arr[6] = {4,2,0,18,98,10};
     bubble_sort(arr,6);
-    for (int i=0 ; i<6 ; i++){
-        cout << arr[i] << " ";
-    }
+    disp_array(arr,6);
 
 
     return 0;
