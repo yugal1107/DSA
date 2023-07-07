@@ -40,6 +40,7 @@ int* bubble_sort(int *arr , int n){
 
 
 int* selection_sort(int *arr , int n){
+
     for (int i=0 ; i<n-1 ; i++){   // no need to check till last as it will come automatically to its position
         //setting min to first index for first pass and second in second pass as we need to find second smallest now
         int index = i;
@@ -62,11 +63,32 @@ int* selection_sort(int *arr , int n){
 }
 
 
+int* insertion_sort(int* arr , int n){
+    for (int i=1 ; i<n ; i++){
+        int key = arr[i];
+        for (int j=i-1 ; j>=0 ; j--){
+            if (key < arr[j]){
+                arr[j+1] = arr[j];
+                if (j==0){
+                    arr[j] = key;
+                }
+            }
+            else {
+                arr[j+1] = key;
+                break;
+            }
+        }
+    }
+
+    return arr;
+}
+
+
 
 int main(){
-    int arr[6] = {4,2,0,18,98,10};
+    int arr[6] = {4,3,7,2,54,0};
     // bubble_sort(arr,6);
-    selection_sort(arr,6);
+    insertion_sort(arr,6);
     disp_array(arr,6);
     return 0;
 }
